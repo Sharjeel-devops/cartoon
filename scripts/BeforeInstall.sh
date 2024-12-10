@@ -7,5 +7,5 @@ sudo apt-get update -y
 sudo apt-get install -y nodejs npm
 
 # Install dependencies defined in package.json
-cd /home/ubuntu/Cartoon-animation-web
+cd /home/ubuntu/build
 npm install
