@@ -1,6 +1,16 @@
 version: 0.0
 os: linux
 files:
-  # Copy the contents of the build directory (from the source artifact) to the destination on the EC2 instance
-  - source: /build/
-    destination: /var/www/html/
+  - source: /build
+    destination: /var/www/html
+
+hooks:
+  BeforeInstall:
+    - location: scripts/BeforeInstall.sh
+      timeout: 300
+  AfterInstall:
+    - location: scripts/AfterInstall.sh
+      timeout: 300
+  ApplicationStart:
+    - location: scripts/ApplicationStart.sh
+      timeout: 300
