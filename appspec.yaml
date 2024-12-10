@@ -1,0 +1,6 @@
+version: 0.0
+os: linux
+files:
+  # Copy the contents of the build directory (from the source artifact) to the destination on the EC2 instance
+  - source: /build/
+    destination: /var/www/html/

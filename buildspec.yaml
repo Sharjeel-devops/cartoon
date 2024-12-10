@@ -1,0 +1,28 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14  # Specify Node.js version (change if needed)
+    commands:
+      - echo Installing npm dependencies...
+      - npm install  # Install dependencies for the React app
+
+  build:
+    commands:
+      - echo Building React application...
+      - npm run build  # Run the build script to create a production build
+
+  post_build:
+    commands:
+      - echo Build completed successfully.
+      - echo Preparing for deployment...
+
+artifacts:
+  files:
+    - '**/*'  # Include all files in the repository (adjust if you only want specific files)
+  base-directory: build  # The React app build output directory (default is "build")
+
+cache:
+  paths:
+    - 'node_modules/**/*'  # Cache node_modules to speed up subsequent builds
