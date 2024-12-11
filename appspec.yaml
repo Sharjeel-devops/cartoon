@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: /home/ubuntu/build
+  - source: /home/ubuntu/Cartoon-animation-web
     destination: /var/www/html
 
 hooks:
